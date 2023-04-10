@@ -1,0 +1,27 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %} Data Input {% endblock %}
+{% block content %}
+{% for data in fil %}
+<div class="parent-container d-flex" style="height:800px; background-image: url('{% static 'IMG_20230410_195913.jpg' %}'); background-size:100%">
+        <div class="container pr-2" style="width:45%; border: 4px solid black; border-radius:5px">
+            <div class="row text-center justify-content-center align-items-center" style="height:100%">
+                <div class="col">
+                    <video class="embed-responsive embed-responsive-16by9" style="width:100%; height:700px; border-radius:5px" controls="controls">
+                        <source src="{{data.image.url}}" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="width:1%"></div>
+        <div class="container pl-2" style="border: 4px solid black; border-radius:5px" >
+            <div class="row" style="height:100%">
+                <div class="col">
+                    <p>{{ data.text }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+{% endblock %}

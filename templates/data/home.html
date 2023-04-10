@@ -1,0 +1,38 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %} Data Input {% endblock %}
+{% block content %}
+<form method="POST" action="/data/" enctype="multipart/form-data" style="background-image: url('{% static 'IMG_20230410_195913.jpg' %}'); background-size:100%">
+    {% csrf_token %}
+    <div class="parent-container d-flex" style="height:800px;">
+        <div class="container pr-2" style="width:45%; border: 4px solid black; border-radius:5px">
+            <div class="row text-center justify-content-center align-items-center" style="height:100%">
+                <div class="col">
+                    <h6>
+                    <input type="file" class="fw-bold" style="color:transparent" name="image">
+                    </h6>
+                    <h3>
+                    <p style="width:70%">Upload Video</p>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="width:1%"></div>
+        <div class="container pl-2" style="border: 4px solid black; border-radius:5px" >
+            <div class="row" style="height:100%">
+                <div class="col">
+                        <input type="text" class="form-control Textarea" style="height:100%; background-image: url('{% static 'IMG_20230410_195913.jpg' %}'); background-size:100%" name="text" placeholder="Insert Text Here!" value="" required="">
+                        <div class="invalid-feedback">
+                            Text
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col align-self-center pt-5">
+            <button type="submit" class="btn btn-success fw-bold" style="width:20%">Upload</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
